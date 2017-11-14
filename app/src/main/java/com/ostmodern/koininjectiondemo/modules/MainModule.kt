@@ -8,10 +8,11 @@ class MainModule : AndroidModule() {
 
     override fun context() = applicationContext {
         context("MainActivity") {
-            provide { MainViewModel(get()) }
+            provide { MainViewModel(get("Temporary"), get("Persistent")) }
         }
 
-        provide { MainRepository() }
+        provide("Temporary") { MainRepository("Temp") }
+        provide("Persistent") { MainRepository("Persistent") }
 
     }
 

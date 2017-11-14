@@ -8,7 +8,7 @@ import org.koin.android.ext.android.inject
 class MainActivity : AppCompatActivity() {
 
     // Inject my ViewModel
-    val mainViewModel by inject<MainViewModel>()
+    val mainViewModel by inject<MainViewModel>("Temporary")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
